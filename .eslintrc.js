@@ -35,18 +35,6 @@ module.exports = {
         'message': '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
       }
     ],
-    'no-restricted-imports': [
-      'error',
-      {
-        'paths': [{
-          'name': 'styled-components',
-          'message': 'Please import from styled-components/macro.'
-        }],
-        'patterns': [
-          '!styled-components/macro'
-        ]
-      }
-    ],
     'default-case': 'off',
     'no-param-reassign': ['error', { props: false }],
     'no-case-declarations': 'off',

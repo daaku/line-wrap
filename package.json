@@ -1,7 +1,7 @@
 {
   "name": "daaku-line-wrap",
   "author": "Naitik Shah <n@daaku.org>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small line wrapping library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,15 +9,12 @@
     "check:types": "tsc --noEmit",
     "check:lint": "eslint_d --fix --ext .ts --ext .tsx --ext .js --ext .jsx --ignore-pattern lib .",
     "check": "concurrently 'npm:check:*' 'npm:test'",
-    "build:types": "tsc --emitDeclarationOnly --declaration",
-    "build:js": "babel src --ignore '**/__tests__/*' --out-dir lib --extensions '.ts,.tsx' --source-maps inline",
-    "build": "concurrently 'npm:check:*' 'npm:test' 'npm:build:*' && rm -rf lib/__tests__",
-    "test": "jest --modulePathIgnorePatterns 'lib\/'"
+    "build:js": "tsc --sourceMap --target ES2018 --outDir lib && rm -rf lib/__tests__",
+    "build": "concurrently npm:check:lint npm:test npm:build:*",
+    "test": "jest --modulePathIgnorePatterns 'lib/'"
   },
   "jest": {
-    "transform": {
-      "\\.(js|jsx|ts|tsx)$": "babel-jest"
-    }
+    "preset": "ts-jest"
   },
   "keywords": [
     "text",
@@ -26,19 +23,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/preset-env": "^7.4.1",
-    "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.11",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.5.0",
     "concurrently": "^4.1.0",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.0.0",
@@ -48,9 +35,7 @@
     "eslint_d": "^7.3.0",
     "jest": "^24.5.0",
     "prettier": "^1.16.4",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.3.4000"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.4.0"
   }
 }
