@@ -7,7 +7,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "check:types": "tsc --noEmit",
-    "check:lint": "eslint_d --fix --ext .ts --ext .tsx --ext .js --ext .jsx --ignore-pattern lib .",
+    "check:lint": "eslint --fix --ext .ts --ext .tsx --ext .js --ext .jsx --ignore-pattern lib .",
     "check": "concurrently 'npm:check:*' 'npm:test'",
     "build:js": "tsc --sourceMap --target ES2018 --outDir lib && rm -rf lib/__tests__",
     "build": "concurrently npm:check:lint npm:test npm:build:*",
@@ -32,7 +32,6 @@
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
-    "eslint_d": "^7.3.0",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
