@@ -1,7 +1,7 @@
 {
   "name": "daaku-line-wrap",
   "author": "Naitik Shah <n@daaku.org>",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A small line wrapping library.",
   "repository": "git@github.com:daaku/line-wrap",
   "main": "lib/index.js",
