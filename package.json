@@ -1,7 +1,7 @@
 {
   "name": "daaku-line-wrap",
   "author": "Naitik Shah <n@daaku.org>",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A small line wrapping library.",
   "repository": "git@github.com:daaku/line-wrap",
   "main": "lib/index.js",
@@ -25,12 +25,12 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "concurrently": "^4.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-daaku": "^1.0.4",
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "@types/jest": "^26.0.13",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.8.1",
+    "eslint-config-daaku": "^1.0.7",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
   }
 }
