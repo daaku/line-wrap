@@ -1,4 +1,4 @@
-export default function(maxLen: number, text: string): string {
+export default function (maxLen: number, text: string): string {
   const out = [];
   let nextStart = 0;
   let lastSpace: number | null = null;
