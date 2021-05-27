@@ -9,11 +9,12 @@
   "prettier": "prettier-config-daaku",
   "scripts": {
     "check:types": "tsc --noEmit",
-    "check:lint": "eslint --fix --ext .ts --ext .tsx --ext .js --ext .jsx --ignore-pattern lib .",
+    "check:lint": "eslint --fix --ignore-pattern lib .",
     "check": "run-p 'check:*' 'test'",
     "build:js": "tsc && rm -rf lib/__tests__",
     "build": "run-p check:lint test build:*",
-    "test": "jest --modulePathIgnorePatterns 'lib/'"
+    "test": "jest --modulePathIgnorePatterns 'lib/'",
+    "deploy": "npm run build && npm publish --access=public"
   },
   "jest": {
     "preset": "ts-jest"
