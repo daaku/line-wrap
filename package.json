@@ -30,7 +30,7 @@
   "devDependencies": {
     "@daaku/eslint-config": "^4.0.0",
     "@types/jest": "^29.0.0",
-    "esbuild": "^0.16.3",
+    "esbuild": "^0.17.0",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.1.0",
     "jest": "^29.0.0",
