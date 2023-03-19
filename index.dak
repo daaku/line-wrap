@@ -1,0 +1,25 @@
+(fn ^:export ^:default [maxLen text]
+  (let [out []
+        next-start 0
+        last-space null]
+    (for [i 0 text.length]
+      ; newlines get maintained
+      (when (= ( . text i) "\n")
+        (out.push (text.substring next-start i))
+        (set next-start (inc i))
+        (set last-space null)
+        (continue))
+
+      ; keep track of the last known space
+      (when (= (. text i) " ")
+        (set last-space i))
+
+      ; time to break
+      (when (>= (- i next-start) maxLen)
+        (let [end (|| last-space i)]
+          (out.push (text.substring next-start end))
+          ; nextStart drops the space if there was one
+          (set next-start (if (null? last-space) i (inc last-space)))
+          (set last-space null))))
+    (out.push (text.substring next-start))
+    (out.join "\n")))

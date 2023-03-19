@@ -1,0 +1,27 @@
+#!./node_modules/.bin/dak
+
+(import [:uvu [test]]
+        [:uvu/assert [equal]]
+        ["./index.dak" wrap])
+
+(macro deftest [name max-len input output]
+  '(test ,name
+         (fn []
+           (equal (wrap ,max-len ,input) ,output))))
+
+(deftest "wrap does nothing on small strings"
+  80 "hello world" "hello world")
+
+(deftest "wrap long lines"
+  5 "hello world" "hello\nworld")
+
+(deftest "maintains newlines"
+  5 "hello\nworld" "hello\nworld")
+
+(deftest "maintains multiple newlines"
+  5 "hello\n\nworld" "hello\n\nworld")
+
+(deftest "hard break"
+  4 "hello world" "hell\no\nworl\nd")
+
+(test.run)
