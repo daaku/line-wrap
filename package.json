@@ -6,7 +6,7 @@
   "repository": "git@github.com:daaku/line-wrap",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "mkdir -p dist && dak-transpile < index.dak > dist/index.mjs",
+    "prepare": "mkdir -p dist && dak-transpile < index.dak > dist/index.js",
     "test": "dak tests.dak"
   },
   "keywords": [
