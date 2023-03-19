@@ -1,4 +1,4 @@
-(fn ^:export ^:default [maxLen text]
+(fn ^:export wrap [maxLen text]
   (let [out []
         next-start 0
         last-space null]

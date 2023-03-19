@@ -4,9 +4,14 @@
   "version": "2.0.1",
   "description": "A small line wrapping library.",
   "repository": "git@github.com:daaku/line-wrap",
-  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
-    "prepare": "mkdir -p dist && dak-transpile < index.dak > dist/index.js",
+    "prepare": "mkdir -p dist && dak-transpile < index.dak > dist/index.mjs",
     "test": "dak tests.dak"
   },
   "keywords": [

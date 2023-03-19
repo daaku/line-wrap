@@ -2,7 +2,7 @@
 
 (import [:uvu [test]]
         [:uvu/assert [equal]]
-        ["./index.dak" wrap])
+        ["./index.dak" [wrap]])
 
 (macro deftest [name max-len input output]
   '(test ,name
